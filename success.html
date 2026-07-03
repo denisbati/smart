@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahlung erfolgreich – Denis Batinic SmArt</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .checkout-result {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+  .checkout-result h1 { margin-bottom: 1rem; }
+  .checkout-result p { color: var(--muted); max-width: 32rem; margin: 0 auto 2rem; }
+</style>
+</head>
+<body>
+<section class="checkout-result">
+  <div>
+    <p class="section-label">Denis Batinic SmArt</p>
+    <h1 data-de="Vielen Dank für deine Bestellung!" data-en="Thank you for your order!">Vielen Dank für deine Bestellung!</h1>
+    <p data-de="Die Zahlung war erfolgreich. Denis meldet sich in Kürze per E-Mail zu Versand und Details." data-en="Payment was successful. Denis will contact you shortly by email regarding shipping and details.">Die Zahlung war erfolgreich. Denis meldet sich in Kürze per E-Mail zu Versand und Details.</p>
+    <a href="index.html#shop" class="btn btn-gold" data-de="Zurück zum Shop" data-en="Back to Shop">Zurück zum Shop</a>
+  </div>
+</section>
+<script>
+  const lang = navigator.language.startsWith('en') ? 'en' : 'de';
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-de]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.textContent = text;
+  });
+</script>
+</body>
+</html>

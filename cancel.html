@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zahlung abgebrochen – Denis Batinic SmArt</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  .checkout-result {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    text-align: center;
+  }
+  .checkout-result h1 { margin-bottom: 1rem; }
+  .checkout-result p { color: var(--muted); max-width: 32rem; margin: 0 auto 2rem; }
+</style>
+</head>
+<body>
+<section class="checkout-result">
+  <div>
+    <p class="section-label">Denis Batinic SmArt</p>
+    <h1 data-de="Zahlung abgebrochen" data-en="Payment cancelled">Zahlung abgebrochen</h1>
+    <p data-de="Es wurde nichts berechnet. Du kannst jederzeit zurück in den Shop gehen und es erneut versuchen." data-en="Nothing was charged. You can return to the shop and try again anytime.">Es wurde nichts berechnet. Du kannst jederzeit zurück in den Shop gehen und es erneut versuchen.</p>
+    <a href="index.html#shop" class="btn btn-gold" data-de="Zurück zum Shop" data-en="Back to Shop">Zurück zum Shop</a>
+  </div>
+</section>
+<script>
+  const lang = navigator.language.startsWith('en') ? 'en' : 'de';
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-de]').forEach(el => {
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.textContent = text;
+  });
+</script>
+</body>
+</html>
